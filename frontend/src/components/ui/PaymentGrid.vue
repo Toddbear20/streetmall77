@@ -25,10 +25,7 @@
                     <thead>
                         <tr>
                         <th>Id</th>
-                        <th>Userid</th>
-                        <th>Productid</th>
-                        <th>Qty</th>
-                        <th>Status</th>
+                        <th>Pg</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,10 +35,9 @@
                             :style="val === selectedRow ? 'background-color: rgb(var(--v-theme-primary), 0.2) !important;':''"
                         >
                             <td class="font-semibold">{{ idx + 1 }}</td>
-                            <td class="whitespace-nowrap" label="Userid">{{ val.userid }}</td>
-                            <td class="whitespace-nowrap" label="Productid">{{ val.productid }}</td>
-                            <td class="whitespace-nowrap" label="Qty">{{ val.qty }}</td>
-                            <td class="whitespace-nowrap" label="Status">{{ val.status }}</td>
+                            <td class="whitespace-nowrap" label="Pg">
+                                <PgId :editMode="editMode" v-model="val.pgId"></PgId>
+                            </td>
                             <v-row class="ma-0 pa-4 align-center">
                                 <v-spacer></v-spacer>
                                 <Icon style="cursor: pointer;" icon="mi:delete" @click="deleteRow(val)" />
@@ -63,7 +59,7 @@
                         class="elevation-0 pa-4"
                         height="50px"
                     >
-                        <div style="color:white; font-size:17px; font-weight:700;">Order 등록</div>
+                        <div style="color:white; font-size:17px; font-weight:700;">Payment 등록</div>
                         <v-spacer></v-spacer>
                         <v-icon
                             color="white"
@@ -72,7 +68,7 @@
                         >mdi-close</v-icon>
                     </v-toolbar>
                     <v-card-text>
-                        <Order :offline="offline"
+                        <Payment :offline="offline"
                             :isNew="!value.idx"
                             :editMode="true"
                             :inList="false"
@@ -93,7 +89,7 @@
                         class="elevation-0 pa-4"
                         height="50px"
                     >
-                        <div style="color:white; font-size:17px; font-weight:700;">Order 수정</div>
+                        <div style="color:white; font-size:17px; font-weight:700;">Payment 수정</div>
                         <v-spacer></v-spacer>
                         <v-icon
                             color="white"
@@ -103,10 +99,6 @@
                     </v-toolbar>
                     <v-card-text>
                         <div>
-                            <String label="Userid" v-model="selectedRow.userid" :editMode="true"/>
-                            <Number label="Productid" v-model="selectedRow.productid" :editMode="true"/>
-                            <Number label="Qty" v-model="selectedRow.qty" :editMode="true"/>
-                            <String label="Status" v-model="selectedRow.status" :editMode="true"/>
                             <v-divider class="border-opacity-100 my-divider"></v-divider>
                             <v-layout row justify-end>
                                 <v-btn
@@ -132,12 +124,12 @@ import BaseGrid from '../base-ui/BaseGrid.vue'
 
 
 export default {
-    name: 'orderGrid',
+    name: 'paymentGrid',
     mixins:[BaseGrid],
     components:{
     },
     data: () => ({
-        path: 'orders',
+        path: 'payments',
     }),
     watch: {
     },

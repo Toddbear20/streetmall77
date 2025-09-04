@@ -1,12 +1,11 @@
 package streetmall.domain;
 
+import java.time.LocalDate;
 import java.util.*;
-import lombok.*;
-import streetmall.domain.*;
+import lombok.Data;
 import streetmall.infra.AbstractEvent;
 
 @Data
-@ToString
 public class OrderPlaced extends AbstractEvent {
 
     private Long id;

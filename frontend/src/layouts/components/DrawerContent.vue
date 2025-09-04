@@ -14,6 +14,12 @@ import {
                 to: '/orders',
             }"
         />
+        <VerticalNavLink
+            :item="{
+                title: 'Payment',
+                to: '/payments',
+            }"
+        />
         <VerticalNavSectionTitle :item="{ heading: 'Delivery' }" />
         <VerticalNavLink
             :item="{
@@ -26,6 +32,13 @@ import {
             :item="{
                 title: 'Inventory',
                 to: '/inventories',
+            }"
+        />
+        <VerticalNavSectionTitle :item="{ heading: 'Customercenter' }" />
+        <VerticalNavLink
+            :item="{
+                title: 'MyPage',
+                to: '/myPages',
             }"
         />
     </ul>

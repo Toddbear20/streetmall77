@@ -12,12 +12,20 @@ const router = createRouter({
       component: () => import('../components/ui/OrderGrid.vue'),
     },
     {
+      path: '/payments',
+      component: () => import('../components/ui/PaymentGrid.vue'),
+    },
+    {
       path: '/deliveries',
       component: () => import('../components/ui/DeliveryGrid.vue'),
     },
     {
       path: '/inventories',
       component: () => import('../components/ui/InventoryGrid.vue'),
+    },
+    {
+      path: '/myPages',
+      component: () => import('../components/MyPageView.vue'),
     },
   ],
 })

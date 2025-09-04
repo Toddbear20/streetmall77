@@ -23,6 +23,7 @@ See the README.md files inside the each microservices directory:
 - order
 - delivery
 - product
+- customercenter
 
 
 ## Run API Gateway (Spring Gateway)
@@ -35,6 +36,7 @@ mvn spring-boot:run
 - order
 ```
  http :8088/orders id="id"userid="userid"productid="productid"qty="qty"status="status"
+ http :8088/payments id="id"
 ```
 - delivery
 ```
@@ -43,6 +45,9 @@ mvn spring-boot:run
 - product
 ```
  http :8088/inventories id="id"productid="productid"stock="stock"
+```
+- customercenter
+```
 ```
 
 

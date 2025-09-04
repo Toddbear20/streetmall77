@@ -86,10 +86,6 @@ public class Inventory {
 
         /** Example 2:  finding and process
         
-        // if orderPlaced.pgId exists, use it
-        
-        // ObjectMapper mapper = new ObjectMapper();
-        // Map<, Object> orderMap = mapper.convertValue(orderPlaced.getPgId(), Map.class);
 
         repository().findById(orderPlaced.get???()).ifPresent(inventory->{
             

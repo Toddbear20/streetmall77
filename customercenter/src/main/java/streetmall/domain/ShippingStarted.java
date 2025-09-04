@@ -1,18 +1,17 @@
 package streetmall.domain;
 
+import java.time.LocalDate;
 import java.util.*;
-import lombok.*;
-import streetmall.domain.*;
+import lombok.Data;
 import streetmall.infra.AbstractEvent;
 
 @Data
-@ToString
-public class OrderPlaced extends AbstractEvent {
+public class ShippingStarted extends AbstractEvent {
 
     private Long id;
+    private Long orderid;
     private String userid;
     private Long productid;
     private Integer qty;
     private String status;
-    private String adress;
 }

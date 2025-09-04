@@ -37,12 +37,20 @@ export default {
           link: "/orders",
       },
       {
+          text: "Payment",
+          link: "/payments",
+      },
+      {
           text: "Delivery",
           link: "/deliveries",
       },
       {
           text: "Inventory",
           link: "/inventories",
+      },
+      {
+          text: "MyPage",
+          link: "/myPages",
       },
     ],
   }),

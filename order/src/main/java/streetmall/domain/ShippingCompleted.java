@@ -7,12 +7,12 @@ import streetmall.infra.AbstractEvent;
 
 @Data
 @ToString
-public class OrderPlaced extends AbstractEvent {
+public class ShippingCompleted extends AbstractEvent {
 
     private Long id;
+    private Long orderid;
     private String userid;
     private Long productid;
     private Integer qty;
     private String status;
-    private String adress;
 }

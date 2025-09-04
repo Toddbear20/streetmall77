@@ -17,29 +17,7 @@ import streetmall.domain.*;
 @Transactional
 public class PolicyHandler {
 
-    @Autowired
-    OrderRepository orderRepository;
-
-    @Autowired
-    PaymentRepository paymentRepository;
-
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
-
-    @StreamListener(
-        value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='ShippingCompleted'"
-    )
-    public void wheneverShippingCompleted_UpdateStatus(
-        @Payload ShippingCompleted shippingCompleted
-    ) {
-        ShippingCompleted event = shippingCompleted;
-        System.out.println(
-            "\n\n##### listener UpdateStatus : " + shippingCompleted + "\n\n"
-        );
-
-        // Sample Logic //
-        Order.updateStatus(event);
-    }
 }
 //>>> Clean Arch / Inbound Adaptor

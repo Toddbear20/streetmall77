@@ -60,10 +60,6 @@ public class Delivery {
 
         /** Example 2:  finding and process
         
-        // if orderPlaced.pgId exists, use it
-        
-        // ObjectMapper mapper = new ObjectMapper();
-        // Map<, Object> orderMap = mapper.convertValue(orderPlaced.getPgId(), Map.class);
 
         repository().findById(orderPlaced.get???()).ifPresent(delivery->{
             
@@ -93,10 +89,6 @@ public class Delivery {
 
         /** Example 2:  finding and process
         
-        // if orderCancled.pgId exists, use it
-        
-        // ObjectMapper mapper = new ObjectMapper();
-        // Map<, Object> orderMap = mapper.convertValue(orderCancled.getPgId(), Map.class);
 
         repository().findById(orderCancled.get???()).ifPresent(delivery->{
             

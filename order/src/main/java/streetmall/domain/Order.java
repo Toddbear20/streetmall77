@@ -45,5 +45,35 @@ public class Order {
         );
         return orderRepository;
     }
+
+    //<<< Clean Arch / Port Method
+    public static void updateStatus(ShippingCompleted shippingCompleted) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        Order order = new Order();
+        repository().save(order);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        // if shippingCompleted.cjLogisId exists, use it
+        
+        // ObjectMapper mapper = new ObjectMapper();
+        // Map<, Object> deliveryMap = mapper.convertValue(shippingCompleted.getCjLogisId(), Map.class);
+
+        repository().findById(shippingCompleted.get???()).ifPresent(order->{
+            
+            order // do something
+            repository().save(order);
+
+
+         });
+        */
+
+    }
+    //>>> Clean Arch / Port Method
+
 }
 //>>> DDD / Aggregate Root
